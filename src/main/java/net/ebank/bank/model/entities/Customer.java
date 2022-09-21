@@ -14,8 +14,9 @@ import java.util.List;
 @Table(name="customers")
 public class Customer {
 
-   @Id
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
    private String name;
    private String email;
 
