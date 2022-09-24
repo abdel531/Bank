@@ -1,6 +1,7 @@
 package net.ebank.bank.model.entities;
 
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "TYPE", length = 4, discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "TYPE", length = 4, discriminatorType = DiscriminatorType.STRING) //une seule colonne
 public abstract class BankAccount {
 
     @Id
@@ -26,6 +27,7 @@ public abstract class BankAccount {
     private AccountStatus status;
 
     @ManyToOne
+    @NotNull
     private Customer customer;
     @OneToMany(mappedBy="bankAccount")
     private List<AccountOperation> accountOperations;

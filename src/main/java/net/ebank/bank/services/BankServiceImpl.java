@@ -85,7 +85,7 @@ public class BankServiceImpl implements BankService{
     }
 
     @Override
-    public List<Customer> ListCustomer() {
+    public List<Customer> listCustomer() {
         return customerRepo.findAll();
     }
 

@@ -18,7 +18,7 @@ public interface BankService {
     CurrentAccount saveCurrentAccount(double initialBalance, double overDraft, Long CustomerId) throws CustomerNotFoundException;
     SavingAccount saveSavingAccount(double initialBalance, double interestRate, Long CustomerId) throws CustomerNotFoundException;
     BankAccount getBankAccount(String accountId) throws BankAccountNotFoundException;
-    List<Customer> ListCustomer();
+    List<Customer> listCustomer();
 
     void deleteCustomer(Long customerId) throws CustomerNotFoundException;
 
